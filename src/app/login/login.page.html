@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-img src="../../assets/logo.png" class="logo"></ion-img>
+    <ion-img src="../../assets/title.png" id="title"></ion-img>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">UniBudget</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+   <form id="form">
+    <ion-item>
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" name="usuario" type="text" placeholder="Ingresa tu usuario" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input [(ngModel)]="contrasena" name="contrasena" type="password" placeholder="Ingresa tu contraseña" required></ion-input>
+    </ion-item>
+
+    <!-- Cambia el evento a click -->
+    <ion-button expand="block" type="button" color="primary" (click)="onLogin()">Iniciar Sesión</ion-button>
+
+    <ion-button expand="block" color="secondary" (click)="abrirModalRegistro()">Registrarse</ion-button>
+  </form>
+
+</ion-content>

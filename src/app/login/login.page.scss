@@ -18,6 +18,19 @@
   height: auto;
 }
 
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 100%;
+}
+
+#form * {
+    font-size: large;
+}
+
 @media (max-width: 768px) {
   .logo {
     max-width: 100px;
@@ -25,5 +38,10 @@
 
   #title {
     height: 50px;
+  }
+
+  #form {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
