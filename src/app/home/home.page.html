@@ -1,7 +1,12 @@
 <ion-header [translucent]="true">
   <div class="header">
     <ion-img src="../../assets/logo.png" class="logo"></ion-img>
-    <ion-img src="../../assets/title.png" id="title"></ion-img>
+    <ion-buttons slot="end" class="btn-logout">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
   </div>
 </ion-header>
 
@@ -11,5 +16,34 @@
       <ion-title size="large">UniBudget</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <div class="container">
+    <ion-card class="card" (click)="goToTransacciones()">
+      <ion-img src="../../assets/home/transaction.png" class="card-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Ingresar transacción</ion-card-title>
+        <ion-card-subtitle>Registra un ingreso o un gasto dentro de la app</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card" (click)="goToPresupuestos()">
+      <ion-img src="../../assets/home/budget.png" class="card-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Crear presupuestos</ion-card-title>
+        <ion-card-subtitle>Define un monto máximo de dinero que puedes gastar en cierta categoría</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card" (click)="goToCategorias()">
+      <ion-img src="../../assets/home/category.png" class="card-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Crear categoría</ion-card-title>
+        <ion-card-subtitle>Define una nueva categoría para clasificar tus gastos e ingresos</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card" (click)="goToAnalisis()">
+      <ion-img src="../../assets/home/analysis.png" class="card-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Balance y análisis</ion-card-title>
+        <ion-card-subtitle>Ve el balance de tus gastos e ingresos y análisis gráficos de los mismos</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
 </ion-content>
