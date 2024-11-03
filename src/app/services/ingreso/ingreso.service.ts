@@ -15,6 +15,26 @@ export class IngresoService {
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
+  getTotalIngresos(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/total/${userId}`)
+  }
+
+  getIngresosPorCategoria(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porCategoria/${userId}`)
+  }
+
+  getIngresosPorDia(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porDia/${userId}`)
+  }
+
+  getIngresosPorMes(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porMes/${userId}`)
+  }
+
+  getIngresosPorAno(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porAno/${userId}`)
+  }
+
   // Crear un nuevo producto
   createIngreso(ingreso: any): Observable<any> {
     return this.http.post(this.apiUrl, ingreso);
