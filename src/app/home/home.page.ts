@@ -12,7 +12,7 @@ export class HomePage {
   constructor(private router:Router, private authService: AuthService) { }
   
   goToTransacciones() {
-    this.router.navigate(['/transacciones'])
+    this.router.navigate(['/transactions'])
   }
 
   goToPresupuestos() {

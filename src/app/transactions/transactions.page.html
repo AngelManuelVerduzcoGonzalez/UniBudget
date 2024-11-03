@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-img src="../../assets/logo.png" class="logo"></ion-img>
+    <ion-title class="title">Agregar transacciones</ion-title>
+    <ion-buttons slot="end" class="btn-logout">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar transacciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form class="form">
+    <ion-item>
+      <ion-label position="stacked">Cantidad</ion-label>
+      <ion-input [(ngModel)]="cantidadGasto" name="cantidad" type="number" placeholder="Ingresa el monto de tu gasto" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select label="Floating label" label-placement="floating">
+        <ion-select-option *ngFor="let categoria of categoriasGasto" [value]="categoria">
+          {{ categoria }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Cambia el evento a click -->
+    <ion-button expand="block" type="button" color="primary" (click)="agregarGasto()">Agregar</ion-button>
+    <ion-button expand="block" type="button" color="primary" (click)="editarGasto()" class="btn-editar">Editar</ion-button>
+  </form>
+  <form class="form">
+    <ion-item>
+      <ion-label position="stacked">Cantidad</ion-label>
+      <ion-input [(ngModel)]="cantidadIngreso" name="cantidad" type="number" placeholder="Ingresa el monto de tu ingreso" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select label="Floating label" label-placement="floating">
+        <ion-select-option *ngFor="let categoria of categoriasIngreso" [value]="categoria">
+          {{ categoria }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="button" color="primary" (click)="agregarIngreso()">Agregar</ion-button>
+    <ion-button expand="block" type="button" color="primary" (click)="editarIngreso()" class="btn-editar">Editar</ion-button>
+  </form>
+</ion-content>

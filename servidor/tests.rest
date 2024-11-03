@@ -1,16 +1,51 @@
-#Test de métodos GET
-POST http://localhost:3000/api/ingresos HTTP/1.1
+#Test de métodos POST
+//Agregar un usuario
+POST http://localhost:3000/api/usuarios HTTP/1.1
 Content-Type: application/json
 
 {
-    "cantidad": 1200,
-    "categoria": "Trabajo",
-    "descripcion": "Money de la chamba",
-    "fecha": "2024-10-28",
-    "userId": 1,
-    "createdAt": 
+    "nombre" : "Angel",
+    "username" : "averduzco",
+    "contrasena" : "Angel0042",
+    "correo" : "angel@gmail.com"
 }
 
 ###
 
-GET http://localhost:3000/api/ingresos/2
+//Agregar un gasto
+POST http://localhost:3000/api/gastos HTTP/1.1
+Content-Type: application/json
+
+{
+    "cantidad": 500,
+    "categoriaId": 3,
+    "descripcion": "Hamburguesas de gato",
+    "fecha": "2024-11-31",
+    "userId": 1
+}
+
+###
+
+//Agregar un ingreso
+POST http://localhost:3000/api/ingresos HTTP/1.1
+Content-Type: application/json
+
+{
+    "cantidad": 1500,
+    "categoriaId": "Trabajo",
+    "descripcion": "Money de la chamba",
+    "fecha": "2024-11-31",
+    "userId": 1
+}
+
+###
+
+//Agregar una categoría
+POST http://localhost:3000/api/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Transporte",
+    "transaccion": "Gasto",
+    "userId": 1
+}

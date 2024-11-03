@@ -10,23 +10,43 @@ export class GastoService {
 
   constructor(private http: HttpClient) {}
 
-  // Obtener todos los productos
-  getIngresos(userId: any): Observable<any> {
+  // Obtener todos los gastos
+  getGasto(userId: any): Observable<any> {
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
-  // Crear un nuevo producto
-  createIngreso(gasto: any): Observable<any> {
+  getTotalGasto(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/total/${userId}`)
+  }
+
+  getGastoPorCategoria(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porCategoria/${userId}`)
+  }
+
+  getGastoPorDia(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porDia/${userId}`)
+  }
+
+  getGastoPorMes(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porMes/${userId}`)
+  }
+
+  getGastoPorAno(userId: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/consulta/porAno/${userId}`)
+  }
+
+  // Crear un nuevo gasto
+  createGasto(gasto: any): Observable<any> {
     return this.http.post(this.apiUrl, gasto);
   }
 
-  // Actualizar producto por ID
-  updateIngreso(id: number, gasto: any): Observable<any> {
+  // Actualizar gasto por ID
+  updateGasto(id: number, gasto: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, gasto);
   }
 
-  // Eliminar producto por ID
-  deleteIngreso(id: number): Observable<any> {
+  // Eliminar gasto por ID
+  deleteGasto(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
