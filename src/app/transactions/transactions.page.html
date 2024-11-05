@@ -17,71 +17,74 @@
       <ion-title size="large">Agregar transacción</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <form class="form">
-    <ion-item>
-      <ion-label position="stacked">Cantidad</ion-label>
-      <ion-input [(ngModel)]="cantidadGasto" name="cantidad" type="number" placeholder="Ingresa el monto del gasto" required></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Categoría</ion-label>
-      <ion-select [(ngModel)]="categoriaGasto" name="pene" label-placement="floating">
-        <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
-          {{ categoria.nombre }}
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
+  <div class="container-forms">
+    <form class="form">
+      <ion-title class="form-title">Ingresar gasto</ion-title>
+      <ion-item>
+        <ion-label position="stacked">Cantidad</ion-label>
+        <ion-input [(ngModel)]="cantidadGasto" name="cantidad" type="number" placeholder="Ingresa el monto del gasto" required></ion-input>
+      </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Descripción del gasto</ion-label>
-        <ion-input [(ngModel)]="descripcionGasto" name="desc" type="text" placeholder="Descripción"></ion-input>
+        <ion-label position="stacked">Categoría</ion-label>
+        <ion-select [(ngModel)]="categoriaGasto" name="pene" label-placement="floating">
+          <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
+            {{ categoria.nombre }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
 
-    <!-- Cambia el evento a click -->
-    <ion-button expand="block" type="button" color="primary" (click)="agregarGasto()">Agregar</ion-button>
+        <ion-item>
+          <ion-label position="stacked">Descripción del gasto</ion-label>
+          <ion-input [(ngModel)]="descripcionGasto" name="desc" type="text" placeholder="Descripción"></ion-input>
+        </ion-item>
 
-    <ion-list>
-      <ion-item *ngFor="let a of gastos2">
-        <ion-label position="stacked">${{ a.cantidad }}</ion-label>
-        <ion-label position="stacked">Descripción: {{ a.descripcion }}</ion-label>
-        <ion-label position="stacked">Categoría: {{ a.cat }}</ion-label>
-        <ion-button expand="block" type="button" color="primary" (click)="editarGasto(a.id)">Editar</ion-button>
-        <ion-button expand="block" type="button" color="primary" (click)="delGasto(a.id)">Eliminar</ion-button>
+      <!-- Cambia el evento a click -->
+      <ion-button expand="block" type="button" color="primary" (click)="agregarGasto()">Agregar</ion-button>
+
+      <ion-list>
+        <ion-item *ngFor="let a of gastos2">
+          <ion-label position="stacked">${{ a.cantidad }}</ion-label>
+          <ion-label position="stacked">Descripción: {{ a.descripcion }}</ion-label>
+          <ion-label position="stacked">Categoría: {{ a.cat }}</ion-label>
+          <ion-button expand="block" type="button" color="primary" (click)="editarGasto(a.id)">Editar</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="delGasto(a.id)">Eliminar</ion-button>
+        </ion-item>
+      </ion-list>
+    </form>
+
+    <form class="form">
+      <ion-title class="form-title">Ingresar ingreso</ion-title>
+      <ion-item>
+        <ion-label position="stacked">Cantidad</ion-label>
+        <ion-input [(ngModel)]="cantidadIngreso" name="cantidad" type="number" placeholder="Ingresa el monto de tu ingreso" required></ion-input>
       </ion-item>
-    </ion-list>
-  </form>
 
-  <form class="form">
-    <ion-item>
-      <ion-label position="stacked">Cantidad</ion-label>
-      <ion-input [(ngModel)]="cantidadIngreso" name="cantidad" type="number" placeholder="Ingresa el monto de tu ingreso" required></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Categoría</ion-label>
-      <ion-select [(ngModel)]="categoriaIngreso" name="pene2" label-placement="floating">
-        <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
-          {{ categoria.nombre }}
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Descripción del ingreso</ion-label>
-      <ion-input [(ngModel)]="descripcionIngreso" name="desc" type="text" placeholder="Descripción"></ion-input>
-    </ion-item>
-
-    <ion-button expand="block" type="button" color="primary" (click)="agregarIngreso()">Agregar</ion-button>
-
-    <ion-list>
-      <ion-item *ngFor="let b of ingresos2">
-        <ion-label position="stacked">${{ b.cantidad }}</ion-label>
-        <ion-label position="stacked">Descripción: {{ b.descripcion }}</ion-label>
-        <ion-label position="stacked">Categoría: {{ b.cat }}</ion-label>
-        <ion-button expand="block" type="button" color="primary" (click)="editarIngreso(b.id)">Editar</ion-button>
-        <ion-button expand="block" type="button" color="primary" (click)="delIngreso(b.id)">Eliminar</ion-button>
+      <ion-item>
+        <ion-label position="stacked">Categoría</ion-label>
+        <ion-select [(ngModel)]="categoriaIngreso" name="pene2" label-placement="floating">
+          <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
+            {{ categoria.nombre }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
-    </ion-list>
-  </form>
+
+      <ion-item>
+        <ion-label position="stacked">Descripción del ingreso</ion-label>
+        <ion-input [(ngModel)]="descripcionIngreso" name="desc" type="text" placeholder="Descripción"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="button" color="primary" (click)="agregarIngreso()">Agregar</ion-button>
+
+      <ion-list>
+        <ion-item *ngFor="let b of ingresos2">
+          <ion-label position="stacked">${{ b.cantidad }}</ion-label>
+          <ion-label position="stacked">Descripción: {{ b.descripcion }}</ion-label>
+          <ion-label position="stacked">Categoría: {{ b.cat }}</ion-label>
+          <ion-button expand="block" type="button" color="primary" (click)="editarIngreso(b.id)">Editar</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="delIngreso(b.id)">Eliminar</ion-button>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
 </ion-content>

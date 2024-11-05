@@ -122,6 +122,7 @@ export class TransactionsPage implements OnInit
   editarGasto(id: any) {
     if (this.categoriaGasto !== null)
       {
+        console.log(this.categoriaGasto.id)
         const gasto =
         {
           "cantidad": this.cantidadGasto,

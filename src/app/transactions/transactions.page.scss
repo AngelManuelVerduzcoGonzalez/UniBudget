@@ -1,7 +1,6 @@
-.container {
+.container-forms {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 20px;
 }
@@ -28,9 +27,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 35%;
-    margin-right: 35%;
+    text-align: center;
     height: 100%;
+}
+
+.form-title {
+  margin-bottom: 20px;
 }
 
 .btn-editar {

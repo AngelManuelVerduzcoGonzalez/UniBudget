@@ -1,118 +1,58 @@
 <ion-header [translucent]="true">
   <div class="header">
     <ion-img src="../../assets/logo.png" class="logo"></ion-img>
-    <ion-title class="title">Agregar categoría</ion-title>
-    <ion-buttons slot="end" class="btn-logout">
-      <ion-button color="danger" (click)="logout()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        Cerrar Sesión
-      </ion-button>
-    </ion-buttons>
+    <ion-title class="title">Análisis Financiero</ion-title>
   </div>
 </ion-header>
 
-
 <ion-content>
   <ion-toolbar>
-    <ion-title>Análisis Financiero</ion-title>
+    <ion-title>Gráficas de Análisis Financiero</ion-title>
   </ion-toolbar>
+
+  <!-- Gráfico de Gastos por Categoría -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Gastos por Categoría</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>Categoria</ion-col>
-          <ion-col>Total</ion-col>
-        </ion-row>
-        <ion-row *ngFor="let gasto of gastoPorCat">
-          <ion-col>{{ getCategoriaNombre(gasto.categoriaId) }}</ion-col>
-          <ion-col>{{ gasto.total }}</ion-col>
-        </ion-row>
-      </ion-grid>
+      <canvas baseChart
+              [data]="gastoPorCategoriaChartData"
+              [labels]="chartLabels"
+              [options]="chartOptions"
+              [type]="'doughnut'">
+      </canvas>
     </ion-card-content>
   </ion-card>
 
+  <!-- Gráfico de Ingresos por Categoría -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Gastos por mes</ion-card-title>
+      <ion-card-title>Ingresos por Categoría</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>Mes</ion-col>
-          <ion-col>Categoria</ion-col>
-          <ion-col>Total</ion-col>
-        </ion-row>
-        <ion-row *ngFor="let gasto of gastoPorMes">
-          <ion-col>{{ gasto.mes }}</ion-col>
-          <ion-col>{{ getCategoriaNombre(gasto.categoriaId) }}</ion-col>
-          <ion-col>{{ gasto.total }}</ion-col>
-        </ion-row>
-      </ion-grid>
+      <canvas baseChart
+              [data]="ingresoPorCategoriaChartData"
+              [labels]="chartLabels"
+              [options]="chartOptions"
+              [type]="'pie'">
+      </canvas>
     </ion-card-content>
   </ion-card>
 
+  <!-- Gráfico de Comparación de Ingresos y Gastos -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Comparación de ingresos y gastos</ion-card-title>
+      <ion-card-title>Comparación de Ingresos y Gastos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>Tipo</ion-col>
-          <ion-col>Total</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Ingresos</ion-col>
-          <ion-col>{{ ingresoTotal }}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Gastos</ion-col>
-          <ion-col>{{ gastoTotal }}</ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Resumen mensual</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>Mes</ion-col>
-          <ion-col>Ingresos</ion-col>
-          <ion-col>Gastos</ion-col>
-        </ion-row>
-        <ion-row *ngFor="let ingreso of ingresoPorMes">
-          <ion-col>{{ ingreso.mes }}</ion-col>
-          <ion-col>{{ ingreso.total }}</ion-col>
-          <ion-col>{{ getGastoPorMes(ingreso.categoriaId, ingreso.mes) }}</ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Resumen anual</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>Año</ion-col>
-          <ion-col>Ingresos</ion-col>
-          <ion-col>Gastos</ion-col>
-        </ion-row>
-        <ion-row *ngFor="let ingreso of ingresoPorAno">
-          <ion-col>{{ ingreso.ano }}</ion-col>
-          <ion-col>{{ ingreso.total }}</ion-col>
-          <ion-col>{{ getGastoPorAno(ingreso.categoriaId, ingreso.ano) }}</ion-col>
-        </ion-row>
-      </ion-grid>
+      <canvas baseChart
+              [data]="ingresoVsGastoChartData"
+              [labels]="['Ingresos', 'Gastos']"
+              [options]="chartOptions"
+              [type]="'bar'">
+      </canvas>
     </ion-card-content>
   </ion-card>
 </ion-content>
+<script src="node_modules/chart.js/src/chart.js"></script>
