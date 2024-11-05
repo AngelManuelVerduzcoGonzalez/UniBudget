@@ -22,6 +22,21 @@ const routes: Routes = [
     loadChildren: () => import('./transactions/transactions.module').then(m => m.TransactionsPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'presupuestos',
+    loadChildren: () => import('./presupuestos/presupuestos.module').then(m => m.PresupuestosPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'categorias',
+    loadChildren: () => import('./categorias/categorias.module').then(m => m.CategoriasPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'analisis',
+    loadChildren: () => import('./analisis/analisis.module').then(m => m.AnalisisPageModule),
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

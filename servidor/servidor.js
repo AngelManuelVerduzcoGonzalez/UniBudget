@@ -551,8 +551,25 @@ app.delete('/api/categorias/:id', async (req, res) => {
 //Obtener presupuestos por ID de usuario
 app.get('/api/presupuestos/:userId', async (req, res) => {
   try {
-    const presupuestos = await Categoria.findAll({
+    const presupuestos = await Presupuesto.findAll({
       where: {
+        userId: req.params.userId
+      }
+    })
+    if (presupuestos.length == 0) {
+      return res.status(404).json({ error: "No se encontraron presupuestos" })
+    }
+    return res.json(presupuestos)
+  } catch (error) {
+    return res.status(500).json({ error: "Error al obtener los presupuestos" })
+  }
+});
+
+app.get('/api/presupuestos/:userId/:id', async (req, res) => {
+  try {
+    const presupuestos = await Presupuesto.findAll({
+      where: {
+        id: req.params.id,
         userId: req.params.userId
       }
     })
@@ -590,7 +607,7 @@ app.put('/api/presupuestos/:id', async (req, res) => {
 });
 
 //Borrar un presupuesto
-app.delete('/api/presupuestos/:id', async (req, res) => {
+app.delete('/api/presupuestos/:userId/:id', async (req, res) => {
   try {
     const presupuesto = await Presupuesto.findByPk(req.params.id);
     if (!presupuesto) {

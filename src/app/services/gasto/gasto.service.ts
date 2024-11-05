@@ -32,7 +32,7 @@ export class GastoService {
   }
 
   getGastoPorAno(userId: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}/consulta/porAno/${userId}`)
+    return this.http.get(`${this.apiUrl}/consulta/porAno/${userId}`) // Ñam, ano
   }
 
   // Crear un nuevo gasto

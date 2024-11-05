@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #2B2EAF;
+}
+
+.logo {
+  max-width: 80px;
+  margin-left: 40px;
+  height: auto;
+}
+
+.btn-logout {
+  margin-right: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 100%;
+}
+
+.btn-editar {
+    display: none;
+}
+
+ion-card {
+  margin: 10px;
+}
+
+ion-grid {
+  margin: 10px;
+}

@@ -24,10 +24,11 @@ export class AuthService {
         next: (response) => {
           if (response) {
             this.usuario = response;
-            console.log(this.usuario)
+            console.log(this.usuario[0])
             if (this.usuario.length != 0) {
-              const { id, username } = this.usuario 
-              localStorage.setItem('loggedInUser', JSON.stringify(id, username));
+              //const { id, username } = this.usuario 
+              localStorage.setItem('loggedInUser', JSON.stringify([this.usuario[0].id, this.usuario[0].username]));
+              localStorage.setItem('uid', this.usuario[0].id);
               resolve(true); // Login exitoso
             } else {
               resolve(false)

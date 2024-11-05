@@ -15,17 +15,21 @@ export class PresupuestoService {
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
+  getPresupuestosId(userId: any, id: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${userId}/${id}`);
+  }
+
   // Actualizar producto por ID
   createPresupuesto(presupuesto: any): Observable<any> {
     return this.http.post(this.apiUrl, presupuesto);
   }
 
   updatePresupuesto(id: any ,presupuesto: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${id}`, presupuesto);
+    return this.http.put(`${this.apiUrl}/${id}`, presupuesto);
   }
 
   // Eliminar producto por ID
-  deletePresupuesto(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deletePresupuesto(userId: number, id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${userId}/${id}`);
   }
 }

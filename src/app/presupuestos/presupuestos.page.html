@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-img src="../../assets/logo.png" class="logo"></ion-img>
+    <ion-title class="title">Agregar presupuesto</ion-title>
+    <ion-buttons slot="end" class="btn-logout">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar presupuesto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form class="form">
+    <ion-item>
+      <ion-label position="stacked">Presupuesto</ion-label>
+      <ion-input [(ngModel)]="cantPres" name="cantidad" type="number" placeholder="Ingresa el presupuesto" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select [(ngModel)]="catPres" name="pene" label-placement="floating">
+        <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
+          {{ categoria.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Cambia el evento a click -->
+    <ion-button expand="block" type="button" color="primary" (click)="add()">Agregar</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let a of pres">
+        <ion-label position="stacked">{{ a.nombre }}</ion-label>
+        <ion-label position="stacked">${{ a.cantidad }}</ion-label>
+        <ion-label position="stacked">Categoría: {{ a.cat }}</ion-label>
+        <ion-button expand="block" type="button" color="primary" (click)="upd(a.id)">Editar</ion-button>
+        <ion-button expand="block" type="button" color="primary" (click)="del(a.id)">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
