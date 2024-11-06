@@ -8,13 +8,16 @@ import { AnalisisPageRoutingModule } from './analisis-routing.module';
 
 import { AnalisisPage } from './analisis.page';
 
+import { BaseChartDirective } from 'ng2-charts';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AnalisisPageRoutingModule
+    AnalisisPageRoutingModule,
+    BaseChartDirective,
+    AnalisisPage
   ],
-  declarations: [AnalisisPage]
 })
 export class AnalisisPageModule {}

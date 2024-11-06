@@ -1,7 +1,13 @@
 <ion-header [translucent]="true">
   <div class="header">
     <ion-img src="../../assets/logo.png" class="logo"></ion-img>
-    <ion-title class="title">Análisis Financiero</ion-title>
+    <ion-title class="title">Agregar categoría</ion-title>
+    <ion-buttons slot="end" class="btn-logout">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
   </div>
 </ion-header>
 
@@ -11,48 +17,55 @@
   </ion-toolbar>
 
   <!-- Gráfico de Gastos por Categoría -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Gastos por Categoría</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas baseChart
-              [data]="gastoPorCategoriaChartData"
-              [labels]="chartLabels"
-              [options]="chartOptions"
-              [type]="'doughnut'">
-      </canvas>
-    </ion-card-content>
-  </ion-card>
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Gastos por Categoría</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="chart-container">
+          <canvas baseChart
+            [data]="gastoPorCategoriaChartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [type]="'doughnut'">
+          </canvas>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Gráfico de Ingresos por Categoría -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Ingresos por Categoría</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas baseChart
-              [data]="ingresoPorCategoriaChartData"
-              [labels]="chartLabels"
-              [options]="chartOptions"
-              [type]="'pie'">
-      </canvas>
-    </ion-card-content>
-  </ion-card>
+    <!-- Gráfico de Ingresos por Categoría -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ingresos por Categoría</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="chart-container">
+          <canvas baseChart
+            [data]="ingresoPorCategoriaChartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [type]="'pie'">
+          </canvas>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Gráfico de Comparación de Ingresos y Gastos -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Comparación de Ingresos y Gastos</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas baseChart
-              [data]="ingresoVsGastoChartData"
-              [labels]="['Ingresos', 'Gastos']"
-              [options]="chartOptions"
-              [type]="'bar'">
-      </canvas>
-    </ion-card-content>
-  </ion-card>
+    <!-- Gráfico de Comparación de Ingresos y Gastos -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Comparación de Ingresos y Gastos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="chart-container">
+          <canvas baseChart
+            [data]="ingresoVsGastoChartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [type]="'bar'">
+          </canvas>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
-<script src="node_modules/chart.js/src/chart.js"></script>

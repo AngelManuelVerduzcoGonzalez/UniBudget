@@ -28,7 +28,7 @@
       <ion-item>
         <ion-label position="stacked">Categoría</ion-label>
         <ion-select [(ngModel)]="categoriaGasto" name="pene" label-placement="floating">
-          <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
+          <ion-select-option *ngFor="let categoria of catsGastos" [value]="categoria">
             {{ categoria.nombre }}
           </ion-select-option>
         </ion-select>
@@ -63,7 +63,7 @@
       <ion-item>
         <ion-label position="stacked">Categoría</ion-label>
         <ion-select [(ngModel)]="categoriaIngreso" name="pene2" label-placement="floating">
-          <ion-select-option *ngFor="let categoria of cats" [value]="categoria">
+          <ion-select-option *ngFor="let categoria of catsIngresos" [value]="categoria">
             {{ categoria.nombre }}
           </ion-select-option>
         </ion-select>

@@ -23,7 +23,7 @@ export class PresupuestosPage implements OnInit
   ngOnInit()
   {
     const userId = Number(localStorage.getItem('uid'));
-    this.categorias.getCategorias(userId).subscribe((categorias) =>
+    this.categorias.getCategoriasByTransaccion('Gasto', userId).subscribe((categorias) =>
       {
         this.cats = categorias;
     });

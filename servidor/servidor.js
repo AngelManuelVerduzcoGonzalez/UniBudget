@@ -55,7 +55,7 @@ const Ingreso = sequelize.define('Ingreso', {
   },
   categoriaId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   descripcion: {
     type: DataTypes.TEXT,
@@ -133,7 +133,7 @@ const Presupuesto = sequelize.define('Presupuesto', {
   },
   categoriaId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
   userId: {
     type: DataTypes.INTEGER,
@@ -544,7 +544,7 @@ app.delete('/api/categorias/:id', async (req, res) => {
     await categoria.destroy();
     res.json({ message: 'Categoría eliminada' });
   } catch (error) {
-    res.status(500).json({ error: 'Error al eliminar la categoria' });
+    res.status(500).json({ error: 'Error al eliminar la categoria' + error});
   }
 });
 

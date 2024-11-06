@@ -1,22 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions } from 'chart.js';
 import { AuthService } from '../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { PresupuestoService } from '../services/presupuesto/presupuesto.service';
 import { CategoriaService } from '../services/categoria/categoria.service';
 import { GastoService } from '../services/gasto/gasto.service';
 import { IngresoService } from '../services/ingreso/ingreso.service';
+import { BaseChartDirective } from 'ng2-charts';
+import { ChartOptions, ChartDataset, ChartType, ChartTypeRegistry, ChartData, Chart, registerables } from 'chart.js';
+import { IonicModule } from '@ionic/angular';
+
+Chart.register(...registerables)
 
 @Component({
   selector: 'app-analisis',
   templateUrl: './analisis.page.html',
   styleUrls: ['./analisis.page.scss'],
+  imports: [BaseChartDirective, IonicModule],
+  standalone: true
 })
 export class AnalisisPage implements OnInit {
   // Datos y opciones para los gráficos
-  public gastoPorCategoriaChartData: ChartDataset[] = [];
-  public ingresoPorCategoriaChartData: ChartDataset[] = [];
-  public ingresoVsGastoChartData: ChartDataset[] = [];
+  public gastoPorCategoriaChartData: ChartData<'doughnut'> = {labels:[], datasets:[]};
+  public ingresoPorCategoriaChartData: ChartData<'pie'> = {labels:[], datasets:[]};
+  public ingresoVsGastoChartData: ChartData<'bar'> = { datasets: [] };
+  public gastosPorMes: ChartData<'bar'> = { labels: [], datasets: [] }
+  public ingresosPorMes: ChartData<'bar'> = { labels: [], datasets: [] }
   public chartLabels: string[] = [];
   public chartOptions: ChartOptions = {
     responsive: true,
@@ -81,33 +89,52 @@ export class AnalisisPage implements OnInit {
         this.crearIngresoVsGastoChart();
       });
     });
+
+    this.ingresos.getIngresosPorAno(userId).subscribe((res) => {
+      console.log(res);
+    })
   }
 
   crearGastoPorCategoriaChart() {
-    this.chartLabels = this.gastoPorCat.map(g => this.getCategoriaNombre(g.categoriaId));
-    this.gastoPorCategoriaChartData = [{
+  this.chartLabels = this.gastoPorCat.map(g => this.getCategoriaNombre(g.categoriaId));
+  this.gastoPorCategoriaChartData = {
+    labels: this.chartLabels, // Asegúrate de incluir las etiquetas aquí
+    datasets: [{
       data: this.gastoPorCat.map(g => g.total),
       label: 'Gastos',
-      backgroundColor: '#FF6384',
-    }];
-  }
+    }],
+  };
+}
 
   crearIngresoPorCategoriaChart() {
-    this.chartLabels = this.ingresoPorCat.map(i => this.getCategoriaNombre(i.categoriaId));
-    this.ingresoPorCategoriaChartData = [{
+  this.chartLabels = this.ingresoPorCat.map(i => this.getCategoriaNombre(i.categoriaId));
+  this.ingresoPorCategoriaChartData = {
+    labels: this.chartLabels, // Asegúrate de incluir las etiquetas aquí
+    datasets: [{
       data: this.ingresoPorCat.map(i => i.total),
       label: 'Ingresos',
-      backgroundColor: '#36A2EB',
-    }];
-  }
+    }],
+  };
+}
 
-  crearIngresoVsGastoChart() {
-    this.ingresoVsGastoChartData = [{
-      data: [this.ingresoTotal, this.gastoTotal],
-      label: 'Comparación Ingresos vs Gastos',
-      backgroundColor: ['#36A2EB', '#FF6384'],
-    }];
-  }
+crearIngresoVsGastoChart() {
+  this.chartLabels = ['Transacciones'];
+  this.ingresoVsGastoChartData = {
+    labels: this.chartLabels,
+    datasets: [
+      {
+        data: [this.ingresoTotal], // Solo los ingresos aquí
+        label: 'Ingresos',
+        backgroundColor: '#36A2EB'
+      },
+      {
+        data: [this.gastoTotal], // Solo los gastos aquí
+        label: 'Gastos',
+        backgroundColor: '#FF6384',
+      }
+    ]
+  };
+}
 
   getCategoriaNombre(categoriaId: number): string {
     const categoria = this.categoria.find(cat => cat.id === categoriaId);

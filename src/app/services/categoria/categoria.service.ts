@@ -17,7 +17,7 @@ export class CategoriaService {
 
   // Crear un nuevo producto
   getCategoriasByTransaccion(transaccion: any, userId: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${transaccion}/${userId})`);
+    return this.http.get(`${this.apiUrl}/${transaccion}/${userId}`);
   }
 
   // Actualizar producto por ID
