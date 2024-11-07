@@ -34,5 +34,14 @@
     "BACKUP": "BackUp",
     "BACKUP_DESC": "Create a backup of your data or import one",
     "CREATE_BACKUP": "Create backup",
-    "RESTORE": "Restore data"
+    "RESTORE": "Restore data",
+    "USERNAME": "Username",
+    "USERNAME_PH":"Type your username",
+    "PASSWORD": "Password",
+    "PASSWORD_PH": "Type your password",
+    "EMAIL": "Email",
+    "EMAIL_PH": "Type your email",
+    "CONFIRM_PASSWORD": "Confirm your password",
+    "CONFIRM_PASSWORD_PH": "Type your password again",
+    "NAME_PH": "Type your name"
 }

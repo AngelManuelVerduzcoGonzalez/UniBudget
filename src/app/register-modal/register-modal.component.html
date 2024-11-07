@@ -1,37 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title>{{"REGISTER" | translate}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+      <ion-button (click)="cerrarModal()">{{"CLOSE" | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
-    <ion-label position="stacked">Nombre</ion-label>
-    <ion-input [(ngModel)]="nombre" placeholder="Ingresa tu nombre"></ion-input>
+    <ion-label position="stacked">{{"NAME" | translate}}</ion-label>
+    <ion-input [(ngModel)]="nombre" placeholder="{{'NAME_PH' | translate}}"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Nombre de usuario</ion-label>
-    <ion-input [(ngModel)]="username" placeholder="Ingresa un nombre de usuario"></ion-input>
+    <ion-label position="stacked">{{"USERNAME" | translate}}</ion-label>
+    <ion-input [(ngModel)]="username" placeholder="{{'USERNAME_PH' | translate}}"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Contraseña</ion-label>
-    <ion-input [(ngModel)]="contrasena" type="password" placeholder="Ingresa una contraseña"></ion-input>
+    <ion-label position="stacked">{{"PASSWORD" | translate}}</ion-label>
+    <ion-input [(ngModel)]="contrasena" type="password" placeholder="{{'PASSWORD_PH' | translate}}"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Confirmar Contraseña</ion-label>
-    <ion-input [(ngModel)]="confirmarContrasena" type="password" placeholder="Confirma la contraseña"></ion-input>
+    <ion-label position="stacked">{{"CONFIRM_PASSWORD" | translate}}</ion-label>
+    <ion-input [(ngModel)]="confirmarContrasena" type="password" placeholder="{{'CONFIRM_PASSWORD_PH' | translate}}"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Correo</ion-label>
-    <ion-input [(ngModel)]="correo" placeholder="Ingresa un correo"></ion-input>
+    <ion-label position="stacked">{{"EMAIL" | translate}}</ion-label>
+    <ion-input [(ngModel)]="correo" placeholder="{{'EMAIL_PH' | translate}}"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" color="primary" (click)="registrarUsuario()">Registrar</ion-button>
+  <ion-button expand="block" color="primary" (click)="registrarUsuario()">{{"REGISTER" | translate}}</ion-button>
 </ion-content>

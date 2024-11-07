@@ -14,19 +14,19 @@
 
    <form id="form">
     <ion-item>
-      <ion-label position="stacked">Usuario</ion-label>
-      <ion-input [(ngModel)]="usuario" name="usuario" type="text" placeholder="Ingresa tu usuario" required></ion-input>
+      <ion-label position="stacked">{{"USERNAME" | translate}}</ion-label>
+      <ion-input [(ngModel)]="usuario" name="usuario" type="text" placeholder="{{'USERNAME_PH' | translate}}" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Contraseña</ion-label>
-      <ion-input [(ngModel)]="contrasena" name="contrasena" type="password" placeholder="Ingresa tu contraseña" required></ion-input>
+      <ion-label position="stacked">{{"PASSWORD" | translate}}</ion-label>
+      <ion-input [(ngModel)]="contrasena" name="contrasena" type="password" placeholder="{{'PASSWORD_PH' | translate}}" required></ion-input>
     </ion-item>
 
     <!-- Cambia el evento a click -->
-    <ion-button expand="block" type="button" color="primary" (click)="onLogin()">Iniciar Sesión</ion-button>
+    <ion-button expand="block" type="button" color="primary" (click)="onLogin()">{{"LOGIN" | translate}}</ion-button>
 
-    <ion-button expand="block" color="secondary" (click)="abrirModalRegistro()">Registrarse</ion-button>
+    <ion-button expand="block" color="secondary" (click)="abrirModalRegistro()">{{"REGISTER" | translate}}</ion-button>
   </form>
 
 </ion-content>
