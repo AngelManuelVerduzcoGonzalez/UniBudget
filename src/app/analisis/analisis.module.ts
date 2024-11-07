@@ -9,6 +9,7 @@ import { AnalisisPageRoutingModule } from './analisis-routing.module';
 import { AnalisisPage } from './analisis.page';
 
 import { BaseChartDirective } from 'ng2-charts';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { BaseChartDirective } from 'ng2-charts';
     IonicModule,
     AnalisisPageRoutingModule,
     BaseChartDirective,
-    AnalisisPage
+    AnalisisPage,
+    TranslateModule
   ],
 })
 export class AnalisisPageModule {}

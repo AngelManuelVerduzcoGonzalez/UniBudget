@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PresupuestosPageRoutingModule } from './presupuestos-routing.module';
 
 import { PresupuestosPage } from './presupuestos.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PresupuestosPageRoutingModule
+    PresupuestosPageRoutingModule,
+    TranslateModule
   ],
   declarations: [PresupuestosPage]
 })

@@ -4,7 +4,7 @@
     <ion-buttons slot="end" class="btn-logout">
       <ion-button color="danger" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
-        Cerrar Sesión
+        {{"LOGOUT" | translate}}
       </ion-button>
     </ion-buttons>
   </div>
@@ -20,29 +20,36 @@
     <ion-card class="card" (click)="goToTransacciones()">
       <ion-img src="../../assets/home/transaction.png" class="card-image"></ion-img>
       <ion-card-header>
-        <ion-card-title>Ingresar transacción</ion-card-title>
-        <ion-card-subtitle>Registra un ingreso o un gasto dentro de la app</ion-card-subtitle>
+        <ion-card-title>{{"ADD_TRANSACTION" | translate}}</ion-card-title>
+        <ion-card-subtitle>{{"TRANSACTION_DESC" | translate}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
     <ion-card class="card" (click)="goToPresupuestos()">
       <ion-img src="../../assets/home/budget.png" class="card-image"></ion-img>
       <ion-card-header>
-        <ion-card-title>Crear presupuestos</ion-card-title>
-        <ion-card-subtitle>Define un monto máximo de dinero que puedes gastar en cierta categoría</ion-card-subtitle>
+        <ion-card-title>{{"CREATE_BUDGET" | translate}}</ion-card-title>
+        <ion-card-subtitle>{{"BUDGET_DESC" | translate}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
     <ion-card class="card" (click)="goToCategorias()">
       <ion-img src="../../assets/home/category.png" class="card-image"></ion-img>
       <ion-card-header>
-        <ion-card-title>Crear categoría</ion-card-title>
-        <ion-card-subtitle>Define una nueva categoría para clasificar tus gastos e ingresos</ion-card-subtitle>
+        <ion-card-title>{{"CREATE_CATEGORY" | translate}}</ion-card-title>
+        <ion-card-subtitle>{{"CATEGORY_DESC" | translate}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
     <ion-card class="card" (click)="goToAnalisis()">
       <ion-img src="../../assets/home/analysis.png" class="card-image"></ion-img>
       <ion-card-header>
-        <ion-card-title>Balance y análisis</ion-card-title>
-        <ion-card-subtitle>Ve el balance de tus gastos e ingresos y análisis gráficos de los mismos</ion-card-subtitle>
+        <ion-card-title>{{"BALANCE_AND_ANALYSIS" | translate}}</ion-card-title>
+        <ion-card-subtitle>{{"ANALYSIS_DESC" | translate}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card" (click)="goToIdioma()">
+      <ion-img src="../../assets/home/idioma.png" class="card-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{"CHANGE_LANGUAGE" | translate}}</ion-card-title>
+        <ion-card-subtitle>{{"LANGUAGE_DESC" | translate}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
   </div>

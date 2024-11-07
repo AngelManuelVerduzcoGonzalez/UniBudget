@@ -1,11 +1,11 @@
 <ion-header [translucent]="true">
   <div class="header">
     <ion-img src="../../assets/logo.png" class="logo"></ion-img>
-    <ion-title class="title">Agregar categoría</ion-title>
+    <ion-title class="title">{{"CREATE_CATEGORY" | translate}}</ion-title>
     <ion-buttons slot="end" class="btn-logout">
       <ion-button color="danger" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
-        Cerrar Sesión
+        {{"LOGOUT" | translate}}
       </ion-button>
     </ion-buttons>
   </div>
@@ -14,44 +14,44 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Agregar categoría</ion-title>
+      <ion-title size="large">{{"CREATE_CATEGORY" | translate}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <div class="forms-container">
     <form class="form">
-      <ion-title class="form-title">Categoría de gasto</ion-title>
+      <ion-title class="form-title">{{"EXPENSE_CATEGORY" | translate}}</ion-title>
       <ion-item>
-        <ion-label position="stacked">Nombre</ion-label>
-        <ion-input [(ngModel)]="nom" name="caca" type="text" placeholder="Nombre de la categoría" required></ion-input>
+        <ion-label position="stacked">{{"NAME" | translate}}</ion-label>
+        <ion-input [(ngModel)]="nom" name="caca" type="text" placeholder="{{'CATEGORY_NAME' | translate}}" required></ion-input>
       </ion-item>
 
       <!-- Cambia el evento a click -->
-      <ion-button expand="block" type="button" color="primary" (click)="addGasto()">Agregar</ion-button>
+      <ion-button expand="block" type="button" color="primary" (click)="addGasto()">{{"ADD" | translate}}</ion-button>
 
       <ion-list>
         <ion-item *ngFor="let cat of catsGasto" class="card-categoria">
           <ion-label position="stacked">{{ cat.nombre }}</ion-label>
-          <ion-button expand="block" type="button" color="primary" (click)="updGasto(cat.id)">Editar</ion-button>
-          <ion-button expand="block" type="button" color="primary" (click)="del(cat.id)">Eliminar</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="updGasto(cat.id)">{{"EDIT" | translate}}</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="del(cat.id)">{{"DELETE" | translate}}</ion-button>
         </ion-item>
       </ion-list>
     </form>
 
     <form class="form">
-      <ion-title class="form-title">Categoría de ingreso</ion-title>
+      <ion-title class="form-title">{{"INCOME_CATEGORY" | translate}}</ion-title>
       <ion-item>
-        <ion-label position="stacked">Nombre</ion-label>
-        <ion-input [(ngModel)]="nom" name="caca" type="text" placeholder="Nombre de la categoría" required></ion-input>
+        <ion-label position="stacked">{{"NAME" | translate}}</ion-label>
+        <ion-input [(ngModel)]="nom" name="caca" type="text" placeholder="{{'CATEGORY_NAME' | translate}}" required></ion-input>
       </ion-item>
 
       <!-- Cambia el evento a click -->
-      <ion-button expand="block" type="button" color="primary" (click)="addIngreso()">Agregar</ion-button>
+      <ion-button expand="block" type="button" color="primary" (click)="addIngreso()">{{"ADD" | translate}}</ion-button>
 
       <ion-list>
         <ion-item *ngFor="let cat of catsIngreso" class="card-categoria">
           <ion-label position="stacked">{{ cat.nombre }}</ion-label>
-          <ion-button expand="block" type="button" color="primary" (click)="updIngreso(cat.id)">Editar</ion-button>
-          <ion-button expand="block" type="button" color="primary" (click)="del(cat.id)">Eliminar</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="updIngreso(cat.id)">{{"EDIT" | translate}}</ion-button>
+          <ion-button expand="block" type="button" color="primary" (click)="del(cat.id)">{{"DELETE" | translate}}</ion-button>
         </ion-item>
       </ion-list>
     </form>

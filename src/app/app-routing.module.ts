@@ -36,6 +36,11 @@ const routes: Routes = [
     path: 'analisis',
     loadChildren: () => import('./analisis/analisis.module').then(m => m.AnalisisPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'idioma',
+    loadChildren: () => import('./idioma/idioma.module').then(m => m.IdiomaPageModule),
+    canActivate: [AuthGuard]
   }
 ];
 

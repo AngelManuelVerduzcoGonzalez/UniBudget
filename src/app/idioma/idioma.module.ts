@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TransactionsPageRoutingModule } from './transactions-routing.module';
+import { IdiomaPageRoutingModule } from './idioma-routing.module';
 
-import { TransactionsPage } from './transactions.page';
+import { IdiomaPage } from './idioma.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    TransactionsPageRoutingModule,
+    IdiomaPageRoutingModule,
     TranslateModule
   ],
-  declarations: [TransactionsPage]
+  declarations: [IdiomaPage]
 })
-export class TransactionsPageModule {}
+export class IdiomaPageModule {}

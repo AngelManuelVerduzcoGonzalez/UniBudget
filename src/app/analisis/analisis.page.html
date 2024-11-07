@@ -1,11 +1,11 @@
 <ion-header [translucent]="true">
   <div class="header">
     <ion-img src="../../assets/logo.png" class="logo"></ion-img>
-    <ion-title class="title">Agregar categoría</ion-title>
+    <ion-title class="title">{{"BALANCE_AND_ANALYSIS" | translate}}</ion-title>
     <ion-buttons slot="end" class="btn-logout">
       <ion-button color="danger" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
-        Cerrar Sesión
+        {{"LOGOUT" | translate}}
       </ion-button>
     </ion-buttons>
   </div>
@@ -13,14 +13,14 @@
 
 <ion-content>
   <ion-toolbar>
-    <ion-title>Gráficas de Análisis Financiero</ion-title>
+    <ion-title>{{"GRAPHICS_SUB" | translate}}</ion-title>
   </ion-toolbar>
 
   <!-- Gráfico de Gastos por Categoría -->
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Gastos por Categoría</ion-card-title>
+        <ion-card-title>{{"EXPENSES_CHART" | translate}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="chart-container">
@@ -37,7 +37,7 @@
     <!-- Gráfico de Ingresos por Categoría -->
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Ingresos por Categoría</ion-card-title>
+        <ion-card-title>{{"INCOMES_CHART" | translate}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="chart-container">
@@ -54,7 +54,7 @@
     <!-- Gráfico de Comparación de Ingresos y Gastos -->
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Comparación de Ingresos y Gastos</ion-card-title>
+        <ion-card-title>{{"COMPARATION_CHART" | translate}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="chart-container">

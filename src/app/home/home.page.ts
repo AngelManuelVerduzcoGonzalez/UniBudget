@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class HomePage {
 
-  constructor(private router:Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private translate: TranslateService) {}
   
   goToTransacciones() {
     this.router.navigate(['/transactions'])
@@ -25,6 +26,10 @@ export class HomePage {
 
   goToAnalisis() {
     this.router.navigate(['/analisis'])
+  }
+
+  goToIdioma() {
+    this.router.navigate(['/idioma'])
   }
 
   logout() {

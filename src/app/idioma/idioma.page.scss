@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #2B2EAF;
+}
+
+.logo {
+  max-width: 80px;
+  margin-left: 40px;
+  height: auto;
+}
+
+.btn-logout {
+  margin-right: 40px;
+}
+
+.container-idioma {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 50px;
+}

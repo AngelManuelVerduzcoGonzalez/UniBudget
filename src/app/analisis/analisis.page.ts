@@ -8,6 +8,7 @@ import { IngresoService } from '../services/ingreso/ingreso.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartOptions, ChartDataset, ChartType, ChartTypeRegistry, ChartData, Chart, registerables } from 'chart.js';
 import { IonicModule } from '@ionic/angular';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 Chart.register(...registerables)
 
@@ -15,7 +16,7 @@ Chart.register(...registerables)
   selector: 'app-analisis',
   templateUrl: './analisis.page.html',
   styleUrls: ['./analisis.page.scss'],
-  imports: [BaseChartDirective, IonicModule],
+  imports: [BaseChartDirective, IonicModule, TranslateModule],
   standalone: true
 })
 export class AnalisisPage implements OnInit {
@@ -56,6 +57,7 @@ export class AnalisisPage implements OnInit {
     private categorias: CategoriaService,
     private gastos: GastoService,
     private ingresos: IngresoService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {
