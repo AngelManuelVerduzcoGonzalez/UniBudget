@@ -32,6 +32,10 @@ export class HomePage {
     this.router.navigate(['/idioma'])
   }
 
+  goToCopia() {
+    this.router.navigate(['/copia-seguridad'])
+  }
+
   logout() {
     this.authService.logout()
     this.router.navigate(['/login'])

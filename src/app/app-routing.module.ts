@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'idioma',
     loadChildren: () => import('./idioma/idioma.module').then(m => m.IdiomaPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'copia-seguridad',
+    loadChildren: () => import('./copia-seguridad/copia-seguridad.module').then(m => m.CopiaSeguridadPageModule),
+    canActivate: [AuthGuard]
   }
 ];
 

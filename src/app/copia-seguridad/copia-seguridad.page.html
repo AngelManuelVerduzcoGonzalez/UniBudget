@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-img src="../../assets/logo.png" class="logo"></ion-img>
+    <ion-title class="title">{{"CREATE_BACKUP" | translate}}</ion-title>
+    <ion-buttons slot="end" class="btn-logout">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        {{"LOGOUT" | translate}}
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{"CREATE_BACKUP" | translate}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <ion-button (click)="backupDatabase()">
+      {{"CREATE_BACKUP" | translate}}
+    </ion-button>
+  </div>
+</ion-content>

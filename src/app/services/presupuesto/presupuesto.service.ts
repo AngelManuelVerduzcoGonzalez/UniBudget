@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PresupuestoService {
-  private apiUrl = 'http://localhost:3000/api/presupuestos'; // URL de la API
+  private apiUrl = 'https://bqf7b9hj-3000.euw.devtunnels.ms/api/presupuestos'; // URL de la API
 
   constructor(private http: HttpClient) {}
 

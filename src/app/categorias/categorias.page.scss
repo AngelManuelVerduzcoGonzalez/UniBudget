@@ -43,3 +43,17 @@
 .card-categoria {
   display: flex;
 }
+
+@media (max-width: 768px) {
+  .forms-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form {
+    width: 70%;
+    height: 100%;
+  }
+}
