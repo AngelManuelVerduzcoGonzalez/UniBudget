@@ -26,9 +26,13 @@
     "INCOME_CATEGORY": "Income category",
     "NAME": "Name",
     "CATEGORY_NAME": "Category name",
+    "BALANCE": "Balance",
     "GRAPHICS_SUB": "Financial Analysis Charts",
     "EXPENSES_CHART": "Expenses by category",
     "INCOMES_CHART": "Incomes by category",
-    "COMPARATION_CHART": "Comparison of Income and Expenses"
-    
+    "COMPARATION_CHART": "Comparison of Income and Expenses",
+    "BACKUP": "BackUp",
+    "BACKUP_DESC": "Create a backup of your data or import one",
+    "CREATE_BACKUP": "Create backup",
+    "RESTORE": "Restore data"
 }

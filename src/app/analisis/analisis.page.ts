@@ -49,6 +49,7 @@ export class AnalisisPage implements OnInit {
   ingresoPorCat: any[] = [];
   ingresoPorMes: any[] = [];
   ingresoPorAno: any[] = [];
+  balance: number = 0;
 
   constructor(
     private router: Router,
@@ -88,6 +89,7 @@ export class AnalisisPage implements OnInit {
       this.ingresoTotal = res;
       this.gastos.getTotalGasto(userId).subscribe((gastoRes) => {
         this.gastoTotal = gastoRes;
+        this.balance = this.ingresoTotal - this.gastoTotal;
         this.crearIngresoVsGastoChart();
       });
     });

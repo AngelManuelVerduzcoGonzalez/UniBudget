@@ -26,8 +26,13 @@
     "INCOME_CATEGORY": "Categoría de ingreso",
     "NAME": "Nombre",
     "CATEGORY_NAME": "Nombre de la categoría",
-    "GRAPHICS_SUB": "Gráficas de Análisis Financiero",
+    "BALANCE": "Balance",
+    "GRAPH_SUB": "Gráficas de Análisis Financiero",
     "EXPENSES_CHART": "Gastos por categoría",
     "INCOMES_CHART": "Ingresos por categoría",
-    "COMPARATION_CHART": "Comparación de Gastos e Ingresos"
+    "COMPARATION_CHART": "Comparación de Gastos e Ingresos",
+    "BACKUP": "Copia de seguridad",
+    "BACKUP_DESC": "Crea una copia de sefuridad de tus datos o importa una",
+    "CREATE_BACKUP": "Crear copia de seguridad",
+    "RESTORE": "Restaurar datos"
 }
